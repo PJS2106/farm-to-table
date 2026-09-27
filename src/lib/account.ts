@@ -8,7 +8,7 @@ export async function ensureAccount(role: AppRole = "consumer", fullName = "") {
 
   const { data: existingProfile } = await supabase.from("profiles").select("id").eq("id", user.id).maybeSingle();
   if (!existingProfile) {
-    await supabase.from("profiles").insert({ id: user.id, full_name: fullName || user.user_metadata.full_name || user.email?.split("@")[0] || "" });
+    await supabase.from("profiles").insert({ id: user.id, full_name: fullName || user.user_metadata["full_name"] || user.email?.split("@")[0] || "" });
   }
   const { data: existingRole } = await supabase.from("user_roles").select("role").eq("user_id", user.id).maybeSingle();
   if (!existingRole) await supabase.from("user_roles").insert({ user_id: user.id, role });
