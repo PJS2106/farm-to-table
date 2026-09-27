@@ -1,12 +1,12 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useState, type FormEvent } from "react";
 import { ArrowRight, Check, ChevronDown, CircleUserRound, Leaf, Menu, Search, ShoppingBasket, Sprout, X } from "lucide-react";
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable";
-import fieldImage from "@/assets/farm-field.jpg";
-import tomatoesImage from "@/assets/heirloom-tomatoes.jpg";
-import chardImage from "@/assets/rainbow-chard.jpg";
-import strawberriesImage from "@/assets/strawberries.jpg";
+import fieldImage from "/images/farm-field.jpg";
+import tomatoesImage from "/images/heirloom-tomatoes.jpg";
+import chardImage from "/images/rainbow-chard.jpg";
+import strawberriesImage from "/images/strawberries.jpg";
 
 type Role = "farmer" | "consumer";
 type Listing = {
@@ -75,7 +75,7 @@ function FarmToTable() {
     setAuthBusy(false);
   }
 
-  async function handleEmailAuth(event: React.FormEvent<HTMLFormElement>) {
+  async function handleEmailAuth(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setAuthBusy(true);
     setAuthError("");

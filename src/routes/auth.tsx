@@ -1,6 +1,7 @@
 import { createFileRoute, Link, useNavigate } from "@tanstack/react-router";
 import { ArrowLeft, Leaf } from "lucide-react";
-import { useState } from "react";
+import { useState, type FormEvent } from "react";
+import { ensureAccount } from "@/lib/account";
 import { supabase } from "@/integrations/supabase/client";
 import { lovable } from "@/integrations/lovable";
 
@@ -24,7 +25,7 @@ function AuthPage() {
     setBusy(false);
   }
 
-  async function submit(event: React.FormEvent<HTMLFormElement>) {
+  async function submit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault(); setBusy(true); setError(""); setMessage("");
     const form = new FormData(event.currentTarget);
     const email = String(form.get("email") ?? "");
@@ -35,7 +36,7 @@ function AuthPage() {
       if (result.error) setError(result.error.message); else setMessage("Check your email to confirm your account before signing in.");
     } else {
       const result = await supabase.auth.signInWithPassword({ email, password });
-      if (result.error) setError(result.error.message); else await navigate({ to: "/dashboard" });
+      if (result.error) setError(result.error.message); else { await ensureAccount(role, String(form.get("fullName") ?? "")); await navigate({ to: "/dashboard" }); }
     }
     setBusy(false);
   }
