@@ -42,7 +42,7 @@ FARM TO TABLE is a web application that connects local farmers and consumers thr
 ### Installation
 
 ```bash
-git clone https://github.com/PJS2106/earthly-bazaar.git
+git clone https://github.com/PJS2106/farm-to-table
 cd earthly-bazaar
 npm install
 npm run dev
