@@ -1,58 +1,61 @@
-# Farm Fresh MVP
+# FARM TO TABLE
 
-Build a complete GitHub-ready MVP called FARM TO TABLE using React + TypeScript + Vite + Tailwind CSS + Supabase.
+**Farm-to-Table AI Marketplace and Decision-Support Platform**
 
-Create everything in one generation.
+FARM TO TABLE is a web application that connects local farmers and consumers through a transparent digital marketplace. The platform allows farmers to list fresh produce, while consumers can discover nearby products, compare prices, and send purchase requests. It also includes a simple AI-assisted price recommendation feature based on previous market prices.
 
-Pages:
+## Features
 
-Landing
+* Farmer and Consumer authentication using Supabase
+* Farmer dashboard for managing produce listings
+* Consumer marketplace with search, filter, and sorting
+* Add, edit, and delete produce listings (CRUD)
+* Purchase request system
+* AI-assisted price suggestions
+* Responsive design for mobile and desktop
 
-Login
+## Tech Stack
 
-Register
+* React
+* TypeScript
+* Vite
+* Tailwind CSS
+* Supabase
 
-Farmer Dashboard
+## Project Structure
 
-Consumer Dashboard
+`src/` – Application source code
 
-Marketplace
+`public/` – Static assets
 
-Add/Edit Product
+`supabase/` – Database configuration and SQL
 
-Product Details
+`components/` – Reusable UI components
 
-Purchase Requests
+## Local Development
 
-Profile
+### Prerequisites
 
-Features:
+* Node.js (18 or later)
+* npm
 
-Farmer and Consumer roles
+### Installation
 
-Supabase Authentication
-
-CRUD for produce listings
-
-Search, filter, and sort products
-
-Purchase request system
-
-Dashboard cards
-
-Responsive UI
-
-Green agriculture theme
-
-
-
-## Development
-
-Prefer working locally? You need Node.js and npm — [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating).
-
-```sh
-git clone <this-repository-url>
-cd <repository-name>
-npm i
+```bash
+git clone https://github.com/PJS2106/earthly-bazaar.git
+cd earthly-bazaar
+npm install
 npm run dev
 ```
+
+The development server will start at `http://localhost:5173`.
+
+## Future Enhancements
+
+* Real-time farmer notifications
+* Image upload for produce
+* Order tracking
+* Delivery partner integration
+* Advanced AI price prediction
+* Multi-language support
+* Payment gateway integration
