@@ -1,0 +1,6 @@
+- [x] Enable Lovable Cloud auth and database
+- [x] Add secure profiles, roles, produce, and purchase-request tables
+- [ ] Build shared FARM TO TABLE shell and reusable controls
+- [ ] Build landing, auth, marketplace, dashboards, listing, request, and profile pages
+- [ ] Seed sample marketplace listings and write GitHub-ready README
+- [ ] Validate preview, responsive layout, and diagnostics
